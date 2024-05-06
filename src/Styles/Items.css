@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.product-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    /* margin-top: 20px; */
+    padding: 120px;
+    width: 90%;
+    /* text-align: center; */
+    margin-left: 80px;
+    height: 500px;
+}
+
+.product-left {
+    margin-right: 20px;
+    width: 300px;
+    margin-top: 40px;
+}
+
+.product-right {
+    width: 700px;
+    margin-left: 71px;
+    margin-top: 40px;
+}
+
+.product-left img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Subtle box shadow */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.product-left img:hover {
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+.brand-price {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+.brand-price h1 {
+    padding: 10px 20px;
+    border: 2px solid #e0e0e0; /* Light grey border */
+    border-radius: 5px;
+    margin: 12px 12px;
+    background-color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Enhanced box shadow */
+}
+
+#product-countinstock {
+    text-align: center;
+    margin: 10px 0;
+    padding: 10px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #ffff00;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Enhanced box shadow */
+}
+
+#product-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+#product-description {
+    font-size: 16px;
+    color: #555555;
+    margin-bottom: 10px;
+}
+
+#product-richDescription {
+    font-size: 16px;
+    color: #555555;
+    margin-bottom: 10px;
+}
