@@ -57,7 +57,7 @@ const Productpage = () => {
 
   <div className="mx-4 mt-6 md:mt-0 text-center md:text-left" id="right">
     <h1 className="text-3xl">{product.name}</h1>
-    <div className="w-fullflex justify-between">
+    <div className="w-full flex justify-between">
       <StarRating rating={product.rating} />
     </div>
 

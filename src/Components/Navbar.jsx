@@ -9,6 +9,7 @@ import axios from "axios";
 import { useAuth } from "../Context/Auth";
 import { toast } from "react-toastify";
 import Aboutus from "./Aboutus";
+import Nocartitems from "./users/Nocartitems";
 
 export const Navbar = () => {
   const [auth, setAuth] = useAuth();
@@ -178,7 +179,7 @@ export const Navbar = () => {
 
       {open && (
         <div className="w-[600px] shadow-2xl right-1 bg-white fixed h-[100vh] z-50">
-          <Cart />
+          {getTotalCartItems() ? <Cart /> : <Nocartitems />}
         </div>
       )}
 

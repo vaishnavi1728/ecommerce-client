@@ -6,22 +6,22 @@ import shoes from "../../assets/shoes.jpeg";
 const categories = [
   {
     name: "Men",
-    href: "#",
+    href: "/products/Mens",
     imageSrc: men,
   },
   {
     name: "Women",
-    href: "#",
+    href: "/products/women",
     imageSrc: women,
   },
   {
     name: "Electronics",
-    href: "#",
+    href: "/products/shoes",
     imageSrc: watch,
   },
   {
     name: "Shoes",
-    href: "#",
+    href: "/products/electronics",
     imageSrc: shoes,
   },
 ];
@@ -41,7 +41,7 @@ const Homecat = () => {
             Shop by Category
           </h2>
           <a
-            href="#"
+            href="/products/Mens"
             className="hidden text-[16px] sm:text-[20px] font-semibold text-[#2563eb] hover:text-indigo-500 sm:block"
           >
             Browse all categories

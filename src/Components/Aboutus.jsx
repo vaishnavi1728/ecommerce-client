@@ -8,15 +8,18 @@ import { FaLinkedinIn } from "react-icons/fa";
 const Aboutus = () => {
   return (
     <div className="fixed z-40 w-fit top-6 md:mt-20  shadow-2xl md:mx-20 mx-4 rounded-lg overflow-hidden bg-[#e9e8e8ca] border-[#737373]  border-[1px] ">
-      <h2 id="our-team" className=" font-semibold text-[40px] sm:text-[50px] text-center md:py-5 py-1">
+      <h2
+        id="our-team"
+        className=" font-semibold text-[40px] sm:text-[50px] text-center md:py-5 py-1"
+      >
         About Us
       </h2>
       <div className="row gap-3 items-center ">
         <div className="container1">
           <div className="column">
             <h2 className="name abtus">HANUSHA JAIN</h2>
-            <p className="college">U22CS066-SVNIT, Surat</p>
-            <p className="about-text line-clamp-4 md:line-clamp-none">
+            <p className="collegee font-bold text-center  text-[#4e71ec]">U22CS066-SVNIT, Surat</p>
+            <p className="about-text font-poppins text-[#4c4c4c] px-2 line-clamp-4 md:line-clamp-none">
               "Hello there, I'm a dedicated and hardworking individual, driven
               by a deep passion for technology. I'm currently in my second year
               of a B.Tech program and have consistently delivered strong
@@ -50,8 +53,8 @@ const Aboutus = () => {
         <div className="container1">
           <div className="column">
             <h2 className="name abtus">MAYANK KASHYAP</h2>
-            <p className="college">U22ECE066-SVNIT, Surat</p>
-            <p className="about-text line-clamp-4 md:line-clamp-none">
+            <p className="collegee font-bold text-center  text-[#4e71ec]">U22ECE066-SVNIT, Surat</p>
+            <p className="about-text font-poppins text-[#4c4c4c]  line-clamp-4 md:line-clamp-none">
               "Hello there! I'm a passionate individual currently embarking on
               my second year of the Bachelor of Technology (B.Tech) journey. I
               have a penchant for maintaining a serene disposition and a
