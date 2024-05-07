@@ -45,7 +45,7 @@ const Recommendation = () => {
         </h1>{" "}
       </div>
 
-      <div className="md:grid grid-cols-4 mt-12 gap-x-20">
+      <div className="flex flex-wrap justify-center mt-12 gap-x-20">
         {data_product.map((item, i) => {
           return (
             <Item

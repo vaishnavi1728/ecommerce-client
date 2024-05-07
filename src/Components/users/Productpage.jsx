@@ -6,7 +6,7 @@ import Recommendation from "./Recommendation";
 
 function StarRating({ rating }) {
   return (
-    <div className="flex py-2">
+    <div className="flex justify-center sm:justify-start py-2">
       {[...Array(5)].map((_, index) => (
         <svg
           key={index}
@@ -47,47 +47,47 @@ const Productpage = () => {
   }, []);
 
   return (
-    <div className="overflow-hidden">
-      <div className="mx-16 pt-10 w-full overflow-hidden justify-around font-poppins flex">
-        <div className="flex  " id="left ">
-          <div className="pl-2 ">
-            <img src={product.images} alt="" className=" h-96" />
-          </div>
-        </div>
-
-        <div className="mx-4" id="right">
-          <h1 className="text-3xl">{product.name}</h1>
-          <div>
-            <StarRating rating={product.rating} />
-          </div>
-
-          <div className="flex">
-            <div className="pr-2 line-through text-gray-500">
-              Rs. {product.price}
-            </div>
-            <div className="text-red-700">Rs. {product.price}</div>
-          </div>
-
-          <div className="text-[20px] font-normal my-2">
-            <p>{product.description}</p>
-          </div>
-
-          <div className="text-sm my-2 max-w-[500px]">
-            <p>{product.richDescription}</p>
-          </div>
-
-          <button
-            onClick={() => {
-              addToCart(product.id);
-            }}
-            className="my-2 bg-red-500 px-6 py-2 uppercase text-white duration-300 hover:scale-105"
-          >
-            Add to cart
-          </button>
-        </div>
-      </div>
-      <Recommendation />
+    <>
+    <div className="overflow-hidden mx-4 md:mx-16 pt-10 font-poppins flex flex-col sm:flex-row items-center justify-center md:justify-around">
+  <div className="flex justify-center md:justify-start" id="left">
+    <div className="pl-2">
+      <img src={product.images} alt="" className="h-96" />
     </div>
+  </div>
+
+  <div className="mx-4 mt-6 md:mt-0 text-center md:text-left" id="right">
+    <h1 className="text-3xl">{product.name}</h1>
+    <div className="w-fullflex justify-between">
+      <StarRating rating={product.rating} />
+    </div>
+
+    <div className="flex justify-center md:justify-start">
+      <div className="pr-2 line-through text-gray-500">
+        Rs. {product.price}
+      </div>
+      <div className="text-red-700">Rs. {product.price}</div>
+    </div>
+
+    <div className="text-[20px] font-normal my-2">
+      <p>{product.description}</p>
+    </div>
+
+    <div className="text-sm my-2 max-w-[500px]">
+      <p>{product.richDescription}</p>
+    </div>
+
+    <button
+      onClick={() => {
+        addToCart(product.id);
+      }}
+      className="my-2 bg-red-500 px-6 py-2 my-4 uppercase text-white duration-300 hover:scale-105 "
+    >
+      Add to cart
+    </button>
+  </div>
+</div>
+<Recommendation />
+</>
   );
 };
 

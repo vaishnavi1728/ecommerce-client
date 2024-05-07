@@ -113,7 +113,7 @@ const Catpage = (props) => {
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-around gap-4 mt-12">
+        <div className="flex flex-wrap w-full  justify-around sm:gap-10 gap-2 mt-12">
           {data_product.map((item, i) => {
             if(item.category==cat)
             return (

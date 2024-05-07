@@ -33,21 +33,21 @@ function StarRating({ rating }) {
 
 const Item = (props) => {
   return (
-    <div className="shadow-2xl my-4   ">
+    <div className="shadow-2xl w-[260px] my-4 overflow-hidden  ">
       <div>
         <Link to={`/product/${props.id}`}>
-          <div className="h-64 w-64 rounded-md object-cover overflow-hidden">
+          <div className="rounded-md flex justify-center object-cover overflow-hidden">
             <img
               src={props.image}
               alt=""
-              className="h-64 w-64 object-cover hover:scale-110 duration-300"
+              className=" aspect-square object-cover hover:scale-110 duration-300"
             />
           </div>
         </Link>
       </div>
 
       <div className="flex flex-col items-center py-3">
-        <p>{sliceString(props.name)}</p>
+        <p className="line-clamp-1">{sliceString(props.name)}</p>
         <div className="flex justify-center gap-2">
           <div className="line-through text-gray-500">
             {" "}
