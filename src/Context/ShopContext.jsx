@@ -11,7 +11,7 @@ const ShopContextProvider = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post("http://localhost:5000/api/v1/prod/get");
+        const response = await axios.post("https://ecommerce-server-1-2twm.onrender.com/api/v1/prod/get");
         setAllProducts(response.data);
       } catch (error) {
         console.error("Error fetching products:", error);

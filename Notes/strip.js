@@ -10,7 +10,7 @@ const handlePayment = async () => {
         "pk_test_51P8fRZSBZcJvq0CZzAKx9gpheGAATvOCMOCaXxOp3s1flZl6l2GljzAdqkI8nsv9k78f4FmeyTl0Qmx16OvJWqBP00Ch77Z7Mz"
       );
       //ye api endpoint hum backend me banayenge
-      const res = await fetch(`http://localhost:5000/api/v1/order/payment`, {
+      const res = await fetch(`https://ecommerce-server-1-2twm.onrender.com/api/v1/order/payment`, {
         method: "POST",
         headers: {
           "content-type": "application/json",

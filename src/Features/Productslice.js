@@ -16,7 +16,7 @@ export const createProduct = createAsyncThunk(
     try {
       console.log(productData);
       const response = await axios.post(
-        "http://localhost:5000/api/products/create",
+        "https://ecommerce-server-1-2twm.onrender.com/api/products/create",
         productData
       );
       return response.data;
@@ -39,7 +39,7 @@ export const uploadImage = createAsyncThunk(
       // });
       console.log(img);
       const response = await axios.post(
-        "http://localhost:5000/api/v1/prod/upload", // Replace with your actual image upload endpoint
+        "https://ecommerce-server-1-2twm.onrender.com/api/v1/prod/upload", // Replace with your actual image upload endpoint
         img,
         {
           headers: {
@@ -59,7 +59,7 @@ export const fetchProducts = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/v1/prod/products"
+        "https://ecommerce-server-1-2twm.onrender.com/api/v1/prod/products"
       );
       return response.data;
     } catch (error) {
@@ -73,7 +73,7 @@ export const updateProduct = createAsyncThunk(
   async ({ productId, productData }, { rejectWithValue }) => {
     try {
       const response = await axios.patch(
-        `http://localhost:5000/api/products/${productId}`,
+        `https://ecommerce-server-1-2twm.onrender.com/api/products/${productId}`,
         productData
       );
       return response.data;
@@ -88,7 +88,7 @@ export const deleteProduct = createAsyncThunk(
   async (productId, { rejectWithValue }) => {
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/products/${productId}`
+        `https://ecommerce-server-1-2twm.onrender.com/api/products/${productId}`
       );
       return response.data;
     } catch (error) {

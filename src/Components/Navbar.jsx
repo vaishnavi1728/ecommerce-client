@@ -38,7 +38,7 @@ export const Navbar = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.post(
-          "http://localhost:5000/api/v1/prod/get"
+          "https://ecommerce-server-1-2twm.onrender.com/api/v1/prod/get"
         );
 
         setProducts(response.data);

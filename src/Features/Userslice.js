@@ -6,7 +6,7 @@ export const login = createAsyncThunk(
     "login",
     async (userData, { rejectWithValue }) => {
       try {
-        const response = await axios.post("http://localhost:5000/api/v1/user/login", userData);
+        const response = await axios.post("https://ecommerce-server-1-2twm.onrender.com/api/v1/user/login", userData);
         return { userData, responseData: response.data };
       } catch (error) {
         return rejectWithValue(error.response.data);
@@ -16,7 +16,7 @@ export const login = createAsyncThunk(
 
   export const verify=createAsyncThunk("verify",async(userData,{rejectWithValue})=>{
     try{
-      const response=await axios.post("http://localhost:5000/api/v1/user/login",userData);
+      const response=await axios.post("https://ecommerce-server-1-2twm.onrender.com/api/v1/user/login",userData);
       return {userData,responseData: response.data};
     }
     catch(error)
@@ -30,7 +30,7 @@ export const login = createAsyncThunk(
     async (userData, { rejectWithValue }) => {
       try {
         const response = await axios.post(
-          "http://localhost:5000/api/v1/user/register",
+          "https://ecommerce-server-1-2twm.onrender.com/api/v1/user/register",
           userData,{withCredentials:true,}
         );
         return { userData, responseData: response.data };
@@ -44,7 +44,7 @@ export const login = createAsyncThunk(
     "user/forgotPassword",
     async (email, { rejectWithValue }) => {
       try {
-        const response = await axios.post("http://localhost:5000/api/v1/user/password/forgot", { email });
+        const response = await axios.post("https://ecommerce-server-1-2twm.onrender.com/api/v1/user/password/forgot", { email });
         return response.data; // Assuming the response contains a success message
       } catch (error) {
         return rejectWithValue(error.response.data);
@@ -57,7 +57,7 @@ export const login = createAsyncThunk(
     "user/updatePassword",
     async ({ id, oldPassword, newPassword }, { rejectWithValue }) => {
       try {
-        const response = await axios.put(`http://localhost:5000/api/v1/user/updatepassword/${id}`, { oldPassword, newPassword });
+        const response = await axios.put(`https://ecommerce-server-1-2twm.onrender.com/api/v1/user/updatepassword/${id}`, { oldPassword, newPassword });
         return response.data;
       } catch (error) {
         return rejectWithValue(error.response.data);

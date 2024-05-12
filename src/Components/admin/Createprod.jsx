@@ -63,7 +63,7 @@ const Createprod = () => {
 
     const link = await uploadImage();
     const updatedFormData = { ...formData, image: link };
-    axios.post('http://localhost:5000/api/v1/prod/', updatedFormData)
+    axios.post('https://ecommerce-server-1-2twm.onrender.com/api/v1/prod/', updatedFormData)
       .then(response => {
         toast.success('Product created successfully');
       })

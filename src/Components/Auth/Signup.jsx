@@ -24,7 +24,7 @@ export default function Signup() {
         }
         if (userData.name && userData.email && userData.password) {
           try {
-            const response = await axios.post("http://localhost:5000/api/v1/user/register", {
+            const response = await axios.post("https://ecommerce-server-1-2twm.onrender.com/api/v1/user/register", {
               name: userData.name,
               email: userData.email,
               password: userData.password
