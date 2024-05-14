@@ -10,7 +10,7 @@ const Footer = () => {
           <ul className="flex flex-wrap justify-center gap-6 text-[#b5b5b5] lg:justify-start">
             <li>
               <Link
-                to="/"
+                to="/mens"
                 className="hover:border-b-2 hover:border-orange-400 hover:mb-4"
               >
                 Men
@@ -18,7 +18,7 @@ const Footer = () => {
             </li>
             <li>
               <Link
-                to="/Mens"
+                to="/women"
                 className="hover:border-b-2 hover:border-orange-400 hover:mb-4"
               >
                 Women
@@ -26,7 +26,7 @@ const Footer = () => {
             </li>
             <li>
               <Link
-                to="/Womens"
+                to="/shoes"
                 className="hover:border-b-2 hover:border-orange-400 hover:mb-4"
               >
                 Shoes
@@ -34,20 +34,13 @@ const Footer = () => {
             </li>
             <li>
               <Link
-                to="/Kids"
+                to="/electronics"
                 className="hover:border-b-2 hover:border-orange-400 hover:mb-4"
               >
                 Electronics
               </Link>
             </li>
-            <li>
-              <Link
-                to="/Kids"
-                className="hover:border-b-2 hover:border-orange-400 hover:mb-4"
-              >
-                About us
-              </Link>
-            </li>
+            
           </ul>
           <div className="flex items-center justify-center flex-col gap-4 mt-6 lg:mt-0">
             <img className="w-80 md:mt-6 mt-1" src={pay} alt="payment" />

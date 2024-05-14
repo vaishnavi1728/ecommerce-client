@@ -27,6 +27,9 @@ function StarRating({ rating }) {
 }
 
 const Productpage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [product, setProduct] = useState([]);
   const { id } = useParams();
   const { addToCart } = useContext(ShopContext);
@@ -48,46 +51,46 @@ const Productpage = () => {
 
   return (
     <>
-    <div className="overflow-hidden mx-4 md:mx-16 pt-10 font-poppins flex flex-col sm:flex-row items-center justify-center md:justify-around">
-  <div className="flex justify-center md:justify-start" id="left">
-    <div className="pl-2">
-      <img src={product.images} alt="" className="h-96" />
-    </div>
-  </div>
+      <div className="overflow-hidden mx-4 md:mx-16 pt-10 font-poppins flex flex-col sm:flex-row items-center justify-center md:justify-around">
+        <div className="flex justify-center md:justify-start" id="left">
+          <div className="pl-2">
+            <img src={product.images} alt="" className="h-96" />
+          </div>
+        </div>
 
-  <div className="mx-4 mt-6 md:mt-0 text-center md:text-left" id="right">
-    <h1 className="text-3xl">{product.name}</h1>
-    <div className="w-full flex justify-between">
-      <StarRating rating={product.rating} />
-    </div>
+        <div className="mx-4 mt-6 md:mt-0 text-center md:text-left" id="right">
+          <h1 className="text-3xl">{product.name}</h1>
+          <div className="w-full flex justify-between">
+            <StarRating rating={product.rating} />
+          </div>
 
-    <div className="flex justify-center md:justify-start">
-      <div className="pr-2 line-through text-gray-500">
-        Rs. {product.price}
+          <div className="flex justify-center md:justify-start">
+            <div className="pr-2 line-through text-gray-500">
+              Rs. {product.price}
+            </div>
+            <div className="text-red-700">Rs. {product.price}</div>
+          </div>
+
+          <div className="text-[20px] font-normal my-2">
+            <p>{product.description}</p>
+          </div>
+
+          <div className="text-sm my-2 max-w-[500px]">
+            <p>{product.richDescription}</p>
+          </div>
+
+          <button
+            onClick={() => {
+              addToCart(product.id);
+            }}
+            className="my-2 bg-red-500 px-6 py-2 my-4 uppercase text-white duration-300 hover:scale-105 "
+          >
+            Add to cart
+          </button>
+        </div>
       </div>
-      <div className="text-red-700">Rs. {product.price}</div>
-    </div>
-
-    <div className="text-[20px] font-normal my-2">
-      <p>{product.description}</p>
-    </div>
-
-    <div className="text-sm my-2 max-w-[500px]">
-      <p>{product.richDescription}</p>
-    </div>
-
-    <button
-      onClick={() => {
-        addToCart(product.id);
-      }}
-      className="my-2 bg-red-500 px-6 py-2 my-4 uppercase text-white duration-300 hover:scale-105 "
-    >
-      Add to cart
-    </button>
-  </div>
-</div>
-<Recommendation />
-</>
+      <Recommendation />
+    </>
   );
 };
 

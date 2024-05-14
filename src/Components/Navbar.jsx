@@ -178,7 +178,7 @@ export const Navbar = () => {
       </div>
 
       {open && (
-        <div className="w-[600px] shadow-2xl right-1 bg-white fixed h-[100vh] z-50">
+        <div className="w-full sm:w-[600px] shadow-2xl right-1 bg-white fixed h-screen sm:h-[100vh] z-50">
           {getTotalCartItems() ? <Cart /> : <Nocartitems />}
         </div>
       )}

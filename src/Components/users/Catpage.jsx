@@ -1,54 +1,87 @@
-import { useContext, useEffect, useState } from "react";
-import { ShopContext } from "../../Context/ShopContext";
+import { useEffect, useState } from "react";
+import { LuLoader } from "react-icons/lu";
 import Item from "./Items";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Noprod from "./Noprod";
 
 const Catpage = () => {
-  const { all_Product } = useContext(ShopContext);
-  // console.log(all_Product)
   const { cat } = useParams();
-  console.log(cat);
   const [isOpen, setIsOpen] = useState(false);
-  const [Filter, setFilter] = useState(false);
+  const [isLoading, setLoading] = useState(false);
+  const [Prod, setProd] = useState([]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleFilterChange = (filterKey) => {
-    setFilter(filterKey);
-    setIsOpen(false); // Close the dropdown after selecting a filter
-  };
-  console.log(Filter);
+  // const handleFilterChange = (filterKey) => {
+  //   setFilter(filterKey);
+
+  //   setIsOpen(false); // Close the dropdown after selecting a filter
+  // };
+
+  // console.log(Filter);
 
   const [data_product, setProducts] = useState([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
+      setLoading(true);
       try {
         const response = await axios.post(
           "https://ecommerce-server-1-2twm.onrender.com/api/v1/prod/get"
         );
 
         setProducts(response.data);
+        setProd(response.data.filter((item) => item.category == cat));
       } catch (error) {
         console.error("Error fetching products:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchProducts();
-  }, []);
-  console.log(data_product);
+  }, [cat]);
 
+  const CatProd = data_product.filter((item) => item.category == cat);
+  let sortedProducts = [];
+  function handleFilterChange(filterType) {
+    sortedProducts = [...CatProd]; // Assuming products is your array of products
+
+    switch (filterType) {
+      case "price_high_low":
+        sortedProducts.sort((a, b) => b.price - a.price); // Sort by price high to low
+        break;
+      case "price_low_high":
+        sortedProducts.sort((a, b) => a.price - b.price); // Sort by price low to high
+        break;
+      case "latest":
+        sortedProducts.sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort by date latest
+        break;
+      case "oldest":
+        sortedProducts.sort((a, b) => new Date(a.date) - new Date(b.date)); // Sort by date oldest
+        break;
+      default:
+        // Do nothing if the filterType is invalid
+        break;
+    }
+    setIsOpen(false);
+    setProd(sortedProducts);
+  }
+
+  // console.log(data_product);
+
+  // setProd(CatProd)
+  console.log(Prod);
   return (
     <div className=" font-poppins">
-      {all_Product ? (
+      {Prod.length ? (
         <div className="my-16 mx-16">
-          <div className="flex font-bold justify-between">
+          <div className="flex font-bold sm:flex-row flex-col justify-between gap-4">
             <p className="capitalize">
-              Showing {data_product.length} products. from {cat} category
+              Showing {Prod.length} products. from {cat} category
             </p>
 
             <div className="relative inline-block text-left">
@@ -117,20 +150,23 @@ const Catpage = () => {
           </div>
 
           <div className="flex flex-wrap w-full  justify-around sm:gap-10 gap-2 mt-12">
-            {data_product.map((item, i) => {
-              if (item.category == cat)
-                return (
-                  <Item
-                    key={i}
-                    id={item.id}
-                    image={item.images}
-                    name={item.name}
-                    new_price={item.price}
-                    old_price={item.price}
-                    rating={item.rating}
-                  />
-                );
-            })}
+            {!isLoading ? (
+              Prod.map((item, i) => (
+                <Item
+                  key={i}
+                  id={item.id}
+                  image={item.images}
+                  name={item.name}
+                  new_price={item.price}
+                  old_price={item.price}
+                  rating={item.rating}
+                />
+              ))
+            ) : (
+              <div className="w-full flex justify-center h-[100vh] items-center">
+                <LuLoader className="animate-spin ease-in text-[30px]" />
+              </div>
+            )}
           </div>
         </div>
       ) : (
