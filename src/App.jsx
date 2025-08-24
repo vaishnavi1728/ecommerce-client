@@ -9,7 +9,7 @@ import { Navbar } from './Components/Navbar';
 import Footer from './Components/users/Footer';
 import Catpage from './Components/users/Catpage';
 import Productpage from './Components/users/Productpage';
-import Aboutus from './Components/Aboutus';
+// import Aboutus from './Components/Aboutus';
 // import Checkoutsuccess from './Components/users/Checkoutsuccess';
 
 const App = () => {
@@ -31,7 +31,7 @@ const App = () => {
         <Route path='/signup' element={<Signup />} />
         <Route path='/products/:cat' element={<Catpage/>} />
         <Route path='/product/:id' element={<Productpage/>} />
-        <Route path='/aboutus' element={<Aboutus/>} />
+{/*         <Route path='/aboutus' element={<Aboutus/>} /> */}
       </Routes>
       <Footer/>
     </BrowserRouter>
