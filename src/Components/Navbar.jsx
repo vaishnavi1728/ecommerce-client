@@ -8,7 +8,6 @@ import Cart from "./users/Cart";
 import axios from "axios";
 import { useAuth } from "../Context/Auth";
 import { toast } from "react-toastify";
-import Aboutus from "./Aboutus";
 import Nocartitems from "./users/Nocartitems";
 
 export const Navbar = () => {
@@ -196,7 +195,7 @@ export const Navbar = () => {
           </Link>
         ))}
       </div>
-      <button
+{/*       <button
         onClick={() => setabt(!abt)}
         className="fixed px-3 sm:h-[60px] h-[54px]  flex items-center justify-center sm:mb-6 mb-4 sm:ml-6 ml-3 border-[#838383] border-[3px] bg-[#212121]   rounded-full z-50 bottom-0 "
       >
@@ -205,7 +204,7 @@ export const Navbar = () => {
           {abt ? "Close" : "About us"}
         </h3>
       </button>
-      {abt && <Aboutus />}
+      {abt && <Aboutus />} */}
     </>
   );
 };
